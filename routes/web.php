@@ -1,8 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StaterkitController;
-use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -16,20 +15,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Auth::routes();
+// Auth routes
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('home', [StaterkitController::class, 'home'])->name('home');
+    //Dashboard Routes
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 });
-
-//Template Routes
-// Route Components
-Route::get('layouts/collapsed-menu', [StaterkitController::class, 'collapsed_menu'])->name('collapsed-menu');
-Route::get('layouts/boxed', [StaterkitController::class, 'layout_boxed'])->name('layout-boxed');
-Route::get('layouts/without-menu', [StaterkitController::class, 'without_menu'])->name('without-menu');
-Route::get('layouts/empty', [StaterkitController::class, 'layout_empty'])->name('layout-empty');
-Route::get('layouts/blank', [StaterkitController::class, 'layout_blank'])->name('layout-blank');
-
-// locale Route
-Route::get('lang/{locale}', [LanguageController::class, 'swap']);

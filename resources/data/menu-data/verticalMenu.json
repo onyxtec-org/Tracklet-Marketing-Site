@@ -1,10 +1,10 @@
 {
   "menu": [
     {
-      "url": "home",
-      "name": "Home",
+      "url": "/",
+      "name": "Dashboard",
       "icon": "home",
-      "slug": "home"
+      "slug": "dashboard.index"
     }
   ]
 }

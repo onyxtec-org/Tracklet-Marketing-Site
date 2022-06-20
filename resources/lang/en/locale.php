@@ -2,6 +2,7 @@
 
 return [
   "Home"=>"Home",
+  "Dashboard"=>"Dashboard",
   "Starter Kit"=>"Starter Kit",
   "Dashboards" => "Dashboards",
   "Analytics" => "Analytics",
