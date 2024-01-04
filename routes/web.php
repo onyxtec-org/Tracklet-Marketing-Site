@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,4 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('/profile/password', [ProfileController::class, 'updatePasswordProfile'])->name('password.profile.update');
+
+    // Stripe routes
+    Route::post('/stripe/create/customer',[StripeController::class,'createCustomer'])->name('stripe.create.customer');
+    Route::post('/stripe/add-payment-method', [StripeController::class,'addPaymentMethod'])->name('addPaymentMethod');
 });
