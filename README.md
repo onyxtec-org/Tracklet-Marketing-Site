@@ -8,4 +8,7 @@
  #### Run Command php artisan key:generate.
  #### Run php artisan migrate.
  #### Run php artisan serve.
- #### Laravel version 10 that requires PHP version 8.2 
+ #### Laravel version 10 that requires PHP version 8.2 and node 16
+
+ ### For seeding admin data run the below command in your terminal:
+    php artisan admin-credentials:seed
