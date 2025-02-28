@@ -37,4 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/shipping/store', [ShippingController::class, 'store'])->name('shipping.store');
     Route::get('/shipping-addresses', [ShippingController::class, 'list'])->name('shipping.addresses.list');
     Route::get('/devices', [DeviceController::class, 'list'])->name('devices.list');
+    Route::delete('/shipping-addresses/{id}', [ShippingController::class, 'destroy'])->name('shipping.destroy');
+    Route::patch('/devices/{id}/toggle-status', [DeviceController::class, 'toggleStatus'])->name('device.toggleStatus');
+    Route::delete('/devices/{id}', [DeviceController::class, 'destroy'])->name('device.destroy');
 });

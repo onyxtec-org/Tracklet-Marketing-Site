@@ -13,7 +13,7 @@ class DeviceRequestController extends Controller
 {
     public function index()
     {
-        $devices = Device::with('versions.colors')->get();
+        $devices = Device::with('versions.colors')->where('status', true)->get();
         $shippingAddresses = ShippingAddress::all();
 
         return view('device_requests.create', compact('devices', 'shippingAddresses'));

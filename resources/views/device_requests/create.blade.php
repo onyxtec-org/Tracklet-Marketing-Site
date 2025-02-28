@@ -130,69 +130,79 @@
 
 @section('page-script')
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const deviceSelect = document.getElementById('device');
-        const deviceVersionSelect = document.getElementById('device_version');
-        const primaryColorSelect = document.getElementById('primary_color');
-        const secondaryColorSelect = document.getElementById('secondary_color');
+document.addEventListener("DOMContentLoaded", function() {
+    const deviceSelect = document.getElementById('device');
+    const deviceVersionSelect = document.getElementById('device_version');
+    const primaryColorSelect = document.getElementById('primary_color');
+    const secondaryColorSelect = document.getElementById('secondary_color');
 
-        const deviceVersionContainer = document.getElementById('device-version-container');
-        const primaryColorContainer = document.getElementById('primary-color-container');
-        const secondaryColorContainer = document.getElementById('secondary-color-container');
+    const deviceVersionContainer = document.getElementById('device-version-container');
+    const primaryColorContainer = document.getElementById('primary-color-container');
+    const secondaryColorContainer = document.getElementById('secondary-color-container');
 
-        // When a device is selected, show versions
-        deviceSelect.addEventListener('change', function() {
-            let selectedDevice = this.options[this.selectedIndex];
-            let versions = JSON.parse(selectedDevice.getAttribute('data-versions') || '[]');
+    // When a device is selected, populate versions
+    deviceSelect.addEventListener('change', function() {
+        let selectedDevice = this.options[this.selectedIndex];
+        let versions = JSON.parse(selectedDevice.getAttribute('data-versions') || '[]');
 
-            deviceVersionSelect.innerHTML = '<option value="">Select Version</option>';
-            primaryColorSelect.innerHTML = '<option value="">Select Primary Color</option>';
-            secondaryColorSelect.innerHTML = '<option value="">Select Secondary Color</option>';
+        deviceVersionSelect.innerHTML = '<option value="">Select Version</option>';
+        primaryColorSelect.innerHTML = '<option value="">Select Primary Color</option>';
+        secondaryColorSelect.innerHTML = '<option value="">Select Secondary Color</option>';
 
-            if (versions.length > 0) {
-                versions.forEach(version => {
-                    deviceVersionSelect.innerHTML += `<option value="${version.id}" data-colors='${JSON.stringify(version.colors)}'>${version.version}</option>`;
-                });
-                deviceVersionContainer.classList.remove('d-none');
-            } else {
-                deviceVersionContainer.classList.add('d-none');
-                primaryColorContainer.classList.add('d-none');
-                secondaryColorContainer.classList.add('d-none');
-            }
-        });
-
-        // When a device version is selected, show colors
-        deviceVersionSelect.addEventListener('change', function() {
-            let selectedVersion = this.options[this.selectedIndex];
-            let colors = JSON.parse(selectedVersion.getAttribute('data-colors') || '[]');
-
-            primaryColorSelect.innerHTML = '<option value="">Select Primary Color</option>';
-            secondaryColorSelect.innerHTML = '<option value="">Select Secondary Color</option>';
-
-            if (colors.length > 0) {
-                colors.forEach(color => {
-                    primaryColorSelect.innerHTML += `<option value="${color.id}">${color.color_name}</option>`;
-                    secondaryColorSelect.innerHTML += `<option value="${color.id}">${color.color_name}</option>`;
-                });
-                primaryColorContainer.classList.remove('d-none');
-                secondaryColorContainer.classList.remove('d-none');
-            } else {
-                primaryColorContainer.classList.add('d-none');
-                secondaryColorContainer.classList.add('d-none');
-            }
-        });
-
-        // Hide the selected primary color in the secondary color dropdown
-        primaryColorSelect.addEventListener('change', function() {
-            let selectedPrimaryColor = this.value;
-
-            for (let option of secondaryColorSelect.options) {
-                option.hidden = false;
-                if (option.value === selectedPrimaryColor) {
-                    option.hidden = true;
-                }
-            }
-        });
+        if (versions.length > 0) {
+            versions.forEach(version => {
+                deviceVersionSelect.innerHTML += `<option value="${version.id}" data-colors='${JSON.stringify(version.colors)}'>${version.version}</option>`;
+            });
+            deviceVersionContainer.classList.remove('d-none');
+        } else {
+            deviceVersionContainer.classList.add('d-none');
+            primaryColorContainer.classList.add('d-none');
+            secondaryColorContainer.classList.add('d-none');
+        }
     });
+
+    // When a device version is selected, populate colors
+    deviceVersionSelect.addEventListener('change', function() {
+        let selectedVersion = this.options[this.selectedIndex];
+        let colors = JSON.parse(selectedVersion.getAttribute('data-colors') || '[]');
+
+        primaryColorSelect.innerHTML = '<option value="">Select Primary Color</option>';
+        secondaryColorSelect.innerHTML = '<option value="">Select Secondary Color</option>';
+
+        if (colors.length > 0) {
+            colors.forEach(color => {
+                primaryColorSelect.innerHTML += `<option value="${color.id}">${color.color_name}</option>`;
+                secondaryColorSelect.innerHTML += `<option value="${color.id}">${color.color_name}</option>`;
+            });
+            primaryColorContainer.classList.remove('d-none');
+            secondaryColorContainer.classList.remove('d-none');
+        } else {
+            primaryColorContainer.classList.add('d-none');
+            secondaryColorContainer.classList.add('d-none');
+        }
+    });
+
+    // Function to remove selected color from the other dropdown
+    function filterColors(selectedDropdown, otherDropdown) {
+        let selectedValue = selectedDropdown.value;
+
+        for (let option of otherDropdown.options) {
+            option.hidden = false;
+            if (option.value === selectedValue && selectedValue !== "") {
+                option.hidden = true;
+            }
+        }
+    }
+
+    // Hide the selected primary color in the secondary color dropdown
+    primaryColorSelect.addEventListener('change', function() {
+        filterColors(primaryColorSelect, secondaryColorSelect);
+    });
+
+    // Hide the selected secondary color in the primary color dropdown
+    secondaryColorSelect.addEventListener('change', function() {
+        filterColors(secondaryColorSelect, primaryColorSelect);
+    });
+});
 </script>
 @endsection
