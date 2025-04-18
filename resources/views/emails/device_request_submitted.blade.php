@@ -79,7 +79,7 @@
         <p>Thank you for using our service!</p>
 
         <div class="footer">
-            <p>&copy; {{ date('Y') }} TruView. All Rights Reserved.</p>
+            <p>&copy; {{ date('Y') }} Mary Kay. All Rights Reserved.</p>
         </div>
     </div>
 
