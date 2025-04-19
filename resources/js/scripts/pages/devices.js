@@ -34,96 +34,94 @@ $(function () {
                     data: "created_at",
                     render: function (data, type, full, meta) {
                         let date = new Date(data);
-                        return date.toLocaleString('en-US', {
-                            weekday: 'long',
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit',
-                            second: '2-digit',
-                            hour12: true
-                        });
+                        return (
+                            ("0" + (date.getMonth() + 1)).slice(-2) + "/" +
+                            ("0" + date.getDate()).slice(-2) + "/" +
+                            date.getFullYear()
+                        );
                     }
                 },
+                {
+                    data: "status",
+                    render: function (data, type, full, meta) {
+                        let checked = data == 1 ? "checked" : "";
+                        return `<div class="form-check form-switch">
+                                    <input type="checkbox" class="form-check-input toggle-status" data-id="${full.id}" ${checked}>
+                                </div>`;
+                    }
+                },
+                {
+                    data: null,
+                    orderable: false,
+                    render: function (data, type, full, meta) {
+                        return (
+                            '<div class="btn-group">' +
+                            '<a class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">' +
+                            feather.icons["more-vertical"].toSvg({ class: "font-small-4" }) +
+                            "</a>" +
+                            '<div class="dropdown-menu dropdown-menu-right">' +
+                            '<a id="deleteDevice" data-id="' +
+                            full["id"] +
+                            '" class="dropdown-item delete-record">' +
+                            feather.icons["trash-2"].toSvg({ class: "font-small-4 mr-50" }) +
+                            "Delete</a></div>" +
+                            "</div>" +
+                            "</div>"
+                        );
+                    }
+                }
             ],
-            order: [[3, "asc"]],
-            dom: '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-right"B>><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
+            order: [[4, "asc"]],
+            dom: '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-right">><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-6"l>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
             displayLength: 10,
             lengthMenu: [10, 25, 50, 75, 100],
-            buttons: [
-                {
-                    extend: "collection",
-                    className: "btn btn-outline-secondary dropdown-toggle mr-2",
-                    text:
-                        feather.icons["share"].toSvg({ class: "font-small-4 mr-50" }) +
-                        "Export",
-                    buttons: [
-                        {
-                            extend: "print",
-                            text:
-                                feather.icons["printer"].toSvg({
-                                    class: "font-small-4 mr-50",
-                                }) + "Print",
-                            className: "dropdown-item",
-                            exportOptions: { columns: [1, 2, 3, 4] },
-                        },
-                        {
-                            extend: "csv",
-                            text:
-                                feather.icons["file-text"].toSvg({
-                                    class: "font-small-4 mr-50",
-                                }) + "CSV",
-                            className: "dropdown-item",
-                            exportOptions: { columns: [1, 2, 3, 4] },
-                        },
-                        {
-                            extend: "excel",
-                            text:
-                                feather.icons["file"].toSvg({ class: "font-small-4 mr-50" }) +
-                                "Excel",
-                            className: "dropdown-item",
-                            exportOptions: { columns: [1, 2, 3, 4] },
-                        },
-                        {
-                            extend: "pdf",
-                            text:
-                                feather.icons["clipboard"].toSvg({
-                                    class: "font-small-4 mr-50",
-                                }) + "PDF",
-                            className: "dropdown-item",
-                            exportOptions: { columns: [1, 2, 3, 4] },
-                        },
-                        {
-                            extend: "copy",
-                            text:
-                                feather.icons["copy"].toSvg({ class: "font-small-4 mr-50" }) +
-                                "Copy",
-                            className: "dropdown-item",
-                            exportOptions: { columns: [1, 2, 3, 4] },
-                        },
-                    ],
-                    init: function (api, node, config) {
-                        $(node).removeClass("btn-secondary");
-                        $(node).parent().removeClass("btn-group");
-                        setTimeout(function () {
-                            $(node)
-                                .closest(".dt-buttons")
-                                .removeClass("btn-group")
-                                .addClass("d-inline-flex");
-                        }, 50);
-                    },
-                },
-            ],
             language: {
-                paginate: {
-                    previous: "&nbsp;",
-                    next: "&nbsp;",
-                },
+                paginate: { previous: "&nbsp;", next: "&nbsp;" },
                 sLengthMenu: "Show _MENU_",
-                search: "Search",
-                searchPlaceholder: "Search Devices...",
+                search: "Search Devices...",
             },
+        });
+
+        // Toggle Device Status
+        $(document).on("change", ".toggle-status", function () {
+            var id = $(this).data("id");
+            var status = $(this).prop("checked") ? 1 : 0;
+
+            $.ajax({
+                url: "/devices/" + id + "/toggle-status",
+                type: "PATCH",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                },
+                data: { status: status },
+                success: function (response) {
+                    alert("Device status updated successfully!");
+                },
+                error: function (xhr, status, error) {
+                    alert("Error updating device status. Please try again.");
+                }
+            });
+        });
+
+        // Delete Device
+        $(document).on("click", ".delete-record", function () {
+            var id = $(this).data("id");
+
+            if (confirm("Are you sure you want to delete this device?")) {
+                $.ajax({
+                    url: "/devices/" + id,
+                    type: "DELETE",
+                    headers: {
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                    },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    error: function (xhr, status, error) {
+                        location.reload(true);
+                    }
+                });
+            }
         });
     }
 });

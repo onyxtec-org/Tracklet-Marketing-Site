@@ -59,4 +59,27 @@ class DeviceController extends Controller
         }
         return view('devices.list');
     }
+
+    public function toggleStatus(Request $request, $id)
+    {
+        $device = Device::findOrFail($id);
+        $device->status = $request->status;
+        $device->save();
+
+        return response()->json(['message' => 'Device status updated successfully!']);
+    }
+
+    public function destroy($id)
+    {
+        $device = Device::findOrFail($id);
+
+        $device->versions()->each(function ($version) {
+            $version->colors()->delete();
+            $version->delete();
+        });
+
+        $device->delete();
+
+        return redirect()->back()->with('success', 'Device deleted successfully!');
+    }
 }

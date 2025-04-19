@@ -11,6 +11,7 @@
 @endsection
 
 @section('content')
+@include('panels.response')
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h4 class="card-title">Devices</h4>
@@ -26,6 +27,8 @@
                         <th>Versions</th>
                         <th>Colors</th>
                         <th>Created At</th>
+                        <th>Enable</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
             </table>

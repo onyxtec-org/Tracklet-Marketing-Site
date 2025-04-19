@@ -34,4 +34,11 @@ class ShippingController extends Controller
         }
         return view('shipping.list');
     }
+
+    public function destroy($id)
+    {
+        $address = ShippingAddress::findOrFail($id);
+        $address->delete();
+        return redirect()->route('shipping.addresses.list')->with('success', 'Shipping address deleted successfully!');
+    }
 }

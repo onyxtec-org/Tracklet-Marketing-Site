@@ -16,7 +16,7 @@ $configData = Helper::applClasses();
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>@yield('title') - {{ config('app.name') }} </title>
-  <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/logo/favicon.ico')}}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/logo/MKfavicon.ico')}}">
 
   {{-- Include core + vendor Styles --}}
   @include('panels/styles')
@@ -50,12 +50,11 @@ $configData = Helper::applClasses();
     $(window).on('load', function() {
       if (feather) {
         feather.replace({
-          width: 14
-          , height: 14
+          width: 14,
+          height: 14
         });
       }
     })
-
   </script>
 </body>
 
