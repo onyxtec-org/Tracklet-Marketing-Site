@@ -181,5 +181,14 @@ return [
   'Device Request' => 'Device Request',
   'Shipping Addresses' => 'Shipping Addresses',
   'Devices' => 'Devices',
-  'Device Requests' => 'Device Requests'
+  'Device Requests' => 'Device Requests',
+  'Organizations' => 'Organizations',
+  'Administration' => 'Administration',
+  'User Management' => 'User Management',
+  'Finance' => 'Finance',
+  'Expense Tracking' => 'Expense Tracking',
+  'Operations' => 'Operations',
+  'Inventory Management' => 'Inventory Management',
+  'Asset Management' => 'Asset Management',
+  'Repair & Maintenance' => 'Repair & Maintenance'
 ];

@@ -5,17 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Traits\ApiResponse;
 
 class ProfileController extends Controller
 {
+    use ApiResponse;
+
     public function index()
     {
-        return view('profile');
+        $user = auth()->user();
+        
+        return $this->respond(
+            ['user' => $user],
+            'profile',
+            ['user' => $user]
+        );
     }
+
     public function updatePasswordProfile(Request $request)
     {
         $user = auth()->user();
-        $request->validate([
+        
+        $validator = \Validator::make($request->all(), [
             'old-password' => [
                 'required', 'min:8', 'max:255',
                 function ($attribute, $value, $fail) use ($user) {
@@ -28,14 +39,18 @@ class ProfileController extends Controller
             'new-password_confirmation' => 'required',
         ]);
 
+        if ($validator->fails()) {
+            return $this->respondError('Validation failed.', 422, $validator->errors()->toArray());
+        }
+
         $user->password = Hash::make($request->input('new-password'));
 
         if ($user->save()) {
-            return redirect()->route('profile')
-                ->with('success', 'Password updated successfully');
+            return $this->respond([
+                'message' => 'Password updated successfully'
+            ]);
         } else {
-            return redirect()->back()
-                ->with('error', 'Error while updating password');
+            return $this->respondError('Error while updating password', 500);
         }
     }
 }

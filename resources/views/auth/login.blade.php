@@ -14,7 +14,7 @@
     <div class="card mb-0">
       <div class="card-body">
         <a href="javascript:void(0);" class="brand-logo">
-          <img src="{{asset('images/logo/mk.png')}}" alt="Mary Kay">
+          <img src="{{asset('images/logo/LOGO.svg')}}" alt="Mary Kay">
         </a>
 
         <h4 class="card-title mb-1">Welcome to Mary Kay! 👋</h4>
@@ -57,14 +57,12 @@
           <button type="submit" class="btn btn-primary btn-block" tabindex="4">Sign in</button>
         </form>
 
-        <!-- <p class="text-center mt-2">
-          <span>New on our platform?</span>
-          @if (Route::has('register'))
-          <a href="{{ route('register') }}">
-            <span>Create an account</span>
+        <p class="text-center mt-2">
+          <span>New organization?</span>
+          <a href="{{ route('organization.register.show') }}">
+            <span>Register your organization</span>
           </a>
-          @endif
-        </p> -->
+        </p>
       </div>
     </div>
     <!-- /Login v1 -->

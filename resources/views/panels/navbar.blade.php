@@ -50,11 +50,32 @@
           </li>
         </ul>
       </div>
+      @php
+      $user = auth()->user();
+      $canAccessNavbar = false;
+      
+      // Check if user can access navbar items
+      if ($user) {
+          // Super admin always has access
+          if ($user->isSuperAdmin()) {
+              $canAccessNavbar = true;
+          } 
+          // Regular users need to belong to a subscribed organization
+          elseif ($user->organization && $user->organization->isSubscribed()) {
+              $canAccessNavbar = true;
+          }
+      }
+      @endphp
+      
+      @if($canAccessNavbar)
       <ul class="nav navbar-nav align-items-center ml-auto">
         <li class="nav-item dropdown dropdown-user">
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="user-nav d-sm-flex d-none">
-              <span class="user-name font-weight-bolder">{{ auth()->user()->name }}</span>
+              <span class="user-name font-weight-bolder">{{ $user->name }}</span>
+              @if($user->organization)
+              <span class="user-status">{{ $user->organization->name }}</span>
+              @endif
             </div>
             <span class="avatar">
               <img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg')}}" alt="avatar" height="40" width="40">
@@ -71,6 +92,7 @@
           </div>
         </li>
       </ul>
+      @endif
     </div>
   </nav>
 

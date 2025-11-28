@@ -20,6 +20,35 @@
 @section('content')
 <!-- Dashboard Analytics Start -->
 <section id="dashboard-analytics">
+  @if(isset($trialInfo) && $trialInfo['is_on_trial'])
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <div class="alert-body">
+          <div class="d-flex align-items-center">
+            <i data-feather="gift" class="mr-50"></i>
+            <div>
+              <h5 class="alert-heading mb-1">🎉 You're on a Free Trial!</h5>
+              <p class="mb-0">
+                @if($trialInfo['trial_days_remaining'] > 0)
+                  You have <strong>{{ $trialInfo['trial_days_remaining'] }} day(s)</strong> remaining in your free trial.
+                  Your trial ends on <strong>{{ $trialInfo['trial_ends_at']->format('F j, Y') }}</strong>.
+                @else
+                  Your trial ends today!
+                @endif
+                After the trial, your annual subscription will begin automatically.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  @endif
+
   <div class="row match-height">
     <!-- Greetings Card starts -->
     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -41,9 +70,13 @@
             </div>
           </div>
           <div class="text-center">
-            <h1 class="mb-1 text-white">Congratulations John,</h1>
+            <h1 class="mb-1 text-white">Welcome {{ auth()->user()->name }},</h1>
             <p class="card-text m-auto w-75">
-              You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile.
+              @if(isset($trialInfo) && $trialInfo['is_on_trial'])
+                You're currently on a <strong>free trial</strong>. Enjoy full access to all Tracklet features!
+              @else
+                Welcome to your Tracklet dashboard. Manage your organization and track your activities.
+              @endif
             </p>
           </div>
         </div>

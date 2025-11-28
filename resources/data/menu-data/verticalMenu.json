@@ -1,28 +1,57 @@
 {
   "menu": [
     {
-      "url": "/device-request",
-      "name": "Device Request",
-      "icon": "file-plus",
-      "slug": "device.requests.create"
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "home",
+      "slug": "dashboard.index"
     },
     {
-      "url": "/device-requests",
-      "name": "Device Requests",
-      "icon": "list",
-      "slug": "device.requests.list"
+      "url": "/super-admin/organizations",
+      "name": "Organizations",
+      "icon": "briefcase",
+      "slug": "superadmin.organizations.index",
+      "role": "super_admin"
     },
     {
-      "url": "/shipping-addresses",
-      "name": "Shipping Addresses",
-      "icon": "list",
-      "slug": "shipping.list"
+      "navheader": "Administration"
     },
     {
-      "url": "/devices",
-      "name": "Devices",
-      "icon": "list",
-      "slug": "device.list"
+      "url": "/users",
+      "name": "User Management",
+      "icon": "users",
+      "slug": "users",
+      "role": "admin"
+    },
+    {
+      "navheader": "Finance"
+    },
+    {
+      "url": "/expenses",
+      "name": "Expense Tracking",
+      "icon": "dollar-sign",
+      "slug": "expenses"
+    },
+    {
+      "navheader": "Operations"
+    },
+    {
+      "url": "/inventory/items",
+      "name": "Inventory Management",
+      "icon": "package",
+      "slug": "inventory"
+    },
+    {
+      "url": "/assets",
+      "name": "Asset Management",
+      "icon": "layers",
+      "slug": "assets"
+    },
+    {
+      "url": "/maintenance",
+      "name": "Repair & Maintenance",
+      "icon": "tool",
+      "slug": "maintenance"
     }
   ]
 }

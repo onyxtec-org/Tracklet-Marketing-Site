@@ -50,4 +50,22 @@ class LoginController extends Controller
             'pageConfigs' => $pageConfigs
         ]);
     }
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function authenticated(\Illuminate\Http\Request $request, $user)
+    {
+        // Check if user must change password
+        if ($user->must_change_password) {
+            return redirect()->route('password.change')
+                ->with('warning', 'You must change your password before continuing.');
+        }
+
+        return redirect()->intended($this->redirectPath());
+    }
 }

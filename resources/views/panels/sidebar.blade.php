@@ -1,6 +1,22 @@
 @php
 $configData = Helper::applClasses();
+$user = auth()->user();
+$canAccessMenu = false;
+
+// Check if user can access menu items
+if ($user) {
+    // Super admin always has access
+    if ($user->isSuperAdmin()) {
+        $canAccessMenu = true;
+    } 
+    // Regular users need to belong to a subscribed organization
+    elseif ($user->organization && $user->organization->isSubscribed()) {
+        $canAccessMenu = true;
+    }
+}
 @endphp
+
+@if($canAccessMenu)
 <div class="main-menu menu-fixed {{(($configData['theme'] === 'dark') || ($configData['theme'] === 'semi-dark')) ? 'menu-dark' : 'menu-light'}} menu-accordion menu-shadow" data-scroll-to-active="true">
   <div class="navbar-header">
     <ul class="nav navbar-nav flex-row">
@@ -23,19 +39,13 @@ $configData = Helper::applClasses();
         <i data-feather="more-horizontal"></i>
       </li>
       @else
-      {{-- Role-based visibility --}}
+      {{-- Menu item visibility --}}
       @php
-      $showMenu = false;
-      $user = auth()->user();
-
-      if ($user) {
-      if ($user->hasRole(config('truview.roles.Admin'))) {
-      // Admin can see everything except 'device.requests.create'
-      $showMenu = $menu->slug !== 'device.requests.create';
-      } elseif ($user->hasRole(config('truview.roles.User'))) {
-      // User can only see 'device.requests.create'
-      $showMenu = $menu->slug === 'device.requests.create';
-      }
+      $showMenu = true;
+      
+      // Check role-based visibility
+      if (isset($menu->role) && $user) {
+        $showMenu = $user->hasRole($menu->role);
       }
       @endphp
 
@@ -68,4 +78,5 @@ $configData = Helper::applClasses();
     </ul>
   </div>
 </div>
+@endif
 <!-- END: Main Menu-->

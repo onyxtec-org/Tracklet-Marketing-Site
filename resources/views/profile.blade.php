@@ -230,8 +230,4 @@
             }
         });
 </script>
-
-<script type="text/javascript">
-    var publickey = @json(env('STRIPE_KEY'));
-</script>
 @endsection
