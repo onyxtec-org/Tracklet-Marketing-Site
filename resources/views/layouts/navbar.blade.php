@@ -12,8 +12,8 @@
                 <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="{{ env('WEB_URL') }}" class="btn btn-ghost">Sign In</a>
-                <a href="{{ env('WEB_URL') }}" class="btn btn-primary">Get Started</a>
+                <a href="{{ env('WEB_URL') }}" target="_blank" class="btn btn-ghost">Sign In</a>
+                <a href="{{ env('WEB_URL') }}" target="_blank" class="btn btn-primary">Get Started</a>
             </div>
             <button class="mobile-menu-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2">

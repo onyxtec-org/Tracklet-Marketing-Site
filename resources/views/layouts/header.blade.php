@@ -1239,19 +1239,27 @@
         .footer-brand .logo { margin-bottom: 16px; }
         .footer-brand .logo-icon { background: var(--primary); }
         .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; max-width: 280px; line-height: 1.7; margin-bottom: 20px; }
-        .footer-social { display: flex; gap: 12px; }
-        .footer-social a {
-            width: 40px;
-            height: 40px;
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+        .social-link {
+            width: 48px;
+            height: 48px;
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: rgba(255,255,255,0.7);
             transition: all 0.2s;
         }
-        .footer-social a:hover { background: var(--primary); color: white; }
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
         .footer-column h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
         .footer-column ul { list-style: none; }
         .footer-column ul li { margin-bottom: 12px; }
@@ -1798,7 +1806,7 @@
         .social-link {
             width: 48px;
             height: 48px;
-            background: var(--muted-bg);
+            background: rgba(255,255,255,0.1);
             border: 1px solid var(--border);
             border-radius: 12px;
             display: flex;

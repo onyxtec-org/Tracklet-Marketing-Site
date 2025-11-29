@@ -23,6 +23,25 @@ class LandingController extends Controller
         return view('blog');
     }
 
+    public function blogPost($slug)
+    {
+        $posts = [
+            'why-operations-teams-deserve-single-source-of-truth' => 'blog-post-1',
+            'what-admin-chaos-really-costs-growing-company' => 'blog-post-2',
+            'modern-asset-management-is-not-about-barcodes' => 'blog-post-3',
+            'when-finance-and-admins-share-same-dashboard' => 'blog-post-4',
+            'building-tracklet-designing-real-operational-clarity' => 'blog-post-5',
+            'tracklet-vs-stacked-saas-what-consolidation-actually-looks-like' => 'blog-post-6',
+            'playbook-high-velocity-office-ops-teams' => 'blog-post-7',
+        ];
+
+        if (isset($posts[$slug])) {
+            return view('blog-posts.' . $posts[$slug]);
+        }
+
+        abort(404);
+    }
+
     public function terms()
     {
         return view('terms');

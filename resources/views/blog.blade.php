@@ -166,6 +166,12 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 32px;
         }
+        .featured-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .featured-card {
             background: white;
             border-radius: 16px;
@@ -418,19 +424,27 @@
         .footer-brand .logo { margin-bottom: 16px; }
         .footer-brand .logo-icon { background: var(--primary); }
         .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; max-width: 280px; line-height: 1.7; margin-bottom: 20px; }
-        .footer-social { display: flex; gap: 12px; }
-        .footer-social a {
-            width: 40px;
-            height: 40px;
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+        .social-link {
+            width: 48px;
+            height: 48px;
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: rgba(255,255,255,0.7);
             transition: all 0.2s;
         }
-        .footer-social a:hover { background: var(--primary); color: white; }
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
         .footer-column h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
         .footer-column ul { list-style: none; }
         .footer-column ul li { margin-bottom: 12px; }
@@ -497,12 +511,9 @@
     <section class="category-filters">
         <div class="container">
             <button class="category-btn active" data-category="all">All Posts</button>
+            <button class="category-btn" data-category="operations">Operations</button>
             <button class="category-btn" data-category="asset-management">Asset Management</button>
-            <button class="category-btn" data-category="inventory-tips">Inventory Tips</button>
             <button class="category-btn" data-category="office-productivity">Office Productivity</button>
-            <button class="category-btn" data-category="software-updates">Software Updates</button>
-            <button class="category-btn" data-category="case-studies">Case Studies</button>
-            <button class="category-btn" data-category="company-news">Company News</button>
         </div>
     </section>
 
@@ -515,64 +526,132 @@
             </div>
             <div class="featured-grid" id="featuredGrid">
                 <!-- Featured Card 1 -->
-                <article class="featured-card" data-category="asset-management" data-featured="true">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop" alt="Modern office space">
-                        <div class="card-badges">
-                            <span class="badge badge-featured">Featured</span>
-                            <span class="badge badge-category">Asset Management</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">The Complete Guide to Modern Asset Management in 2025</h3>
-                        <p class="card-excerpt">Learn how leading organizations are transforming their asset tracking with technology. Discover best practices, common pitfalls to avoid, and proven strategies for success.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Sarah Chen
-                                </span>
-                                <span class="card-date">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 25, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <a href="{{ route('blog.post', 'why-operations-teams-deserve-single-source-of-truth') }}" class="featured-card-link">
+                    <article class="featured-card" data-category="operations" data-featured="true">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop" alt="Operations team collaboration">
+                            <div class="card-badges">
+                                <span class="badge badge-featured">Featured</span>
+                                <span class="badge badge-category">Operations</span>
                             </div>
                         </div>
-                    </div>
-                </article>
+                        <div class="card-content">
+                            <h3 class="card-title">Why Operations Teams Need a Single Source of Truth</h3>
+                            <p class="card-excerpt">Operations teams work better with one shared source of truth. Learn why visibility matters and how Tracklet unifies finance, assets, and inventory.</p>
+                            <div class="card-meta">
+                                <div style="display: flex; align-items: center; gap: 16px;">
+                                    <span class="card-author">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        Tracklet Team
+                                    </span>
+                                    <span class="card-date">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                        {{ date('M d, Y') }}
+                                    </span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </a>
 
                 <!-- Featured Card 2 -->
-                <article class="featured-card" data-category="case-studies" data-featured="true">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop" alt="Coworking space">
-                        <div class="card-badges">
-                            <span class="badge badge-featured">Featured</span>
-                            <span class="badge badge-category">Case Studies</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">How Coworking Spaces Are Revolutionizing Asset Tracking</h3>
-                        <p class="card-excerpt">Case study: How flexible workspaces are using Tracklet to manage shared resources and maintain accountability across hundreds of members.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    David Kim
-                                </span>
-                                <span class="card-date">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 18, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <a href="{{ route('blog.post', 'what-admin-chaos-really-costs-growing-company') }}" class="featured-card-link">
+                    <article class="featured-card" data-category="operations" data-featured="true">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=500&fit=crop" alt="Admin chaos in growing companies">
+                            <div class="card-badges">
+                                <span class="badge badge-featured">Featured</span>
+                                <span class="badge badge-category">Operations</span>
                             </div>
                         </div>
-                    </div>
-                </article>
+                        <div class="card-content">
+                            <h3 class="card-title">The Real Cost of Admin Chaos in Growing Companies</h3>
+                            <p class="card-excerpt">Admin chaos drains time and money fast. See how manual processes slow growth and what companies lose without clear systems.</p>
+                            <div class="card-meta">
+                                <div style="display: flex; align-items: center; gap: 16px;">
+                                    <span class="card-author">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        Tracklet Team
+                                    </span>
+                                    <span class="card-date">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                        {{ date('M d, Y') }}
+                                    </span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Featured Card 3 -->
+                <a href="{{ route('blog.post', 'modern-asset-management-is-not-about-barcodes') }}" class="featured-card-link">
+                    <article class="featured-card" data-category="asset-management" data-featured="true">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop" alt="Modern asset management">
+                            <div class="card-badges">
+                                <span class="badge badge-featured">Featured</span>
+                                <span class="badge badge-category">Asset Management</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Modern Asset Management Is More Than Barcodes</h3>
+                            <p class="card-excerpt">Asset management is not just barcode scanning. Learn why teams need assignment, maintenance logs, and lifecycle visibility.</p>
+                            <div class="card-meta">
+                                <div style="display: flex; align-items: center; gap: 16px;">
+                                    <span class="card-author">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        Tracklet Team
+                                    </span>
+                                    <span class="card-date">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                        {{ date('M d, Y') }}
+                                    </span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+
+                <!-- Featured Card 4 -->
+                <a href="{{ route('blog.post', 'when-finance-and-admins-share-same-dashboard') }}" class="featured-card-link">
+                    <article class="featured-card" data-category="operations" data-featured="true">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Finance and admin collaboration">
+                            <div class="card-badges">
+                                <span class="badge badge-featured">Featured</span>
+                                <span class="badge badge-category">Operations</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">When Finance and Admins Share the Same Dashboard</h3>
+                            <p class="card-excerpt">See how shared visibility between finance and admin teams reduces back-and-forth, improves spend control, and streamlines reporting.</p>
+                            <div class="card-meta">
+                                <div style="display: flex; align-items: center; gap: 16px;">
+                                    <span class="card-author">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        Tracklet Team
+                                    </span>
+                                    <span class="card-date">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                        {{ date('M d, Y') }}
+                                    </span>
+                                </div>
+                                <div class="card-arrow">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </a>
             </div>
         </div>
     </section>
@@ -581,266 +660,7 @@
     <section class="articles-section">
         <div class="container">
             <div class="articles-grid" id="articlesGrid">
-                <!-- Article 1 -->
-                <article class="article-card" data-category="inventory-tips">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop" alt="Inventory management">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Inventory Tips</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">5 Inventory Management Mistakes That Cost Companies Millions</h3>
-                        <p class="card-excerpt">Avoid these common inventory management pitfalls that lead to unnecessary expenses and operational inefficiencies in your organization.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Michael Rodriguez
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 22, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 2 -->
-                <article class="article-card" data-category="office-productivity">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Office productivity">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Office Productivity</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Boosting Office Productivity Through Better Resource Management</h3>
-                        <p class="card-excerpt">Discover how optimizing your asset allocation can improve team efficiency and create a more productive work environment for everyone.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Emma Thompson
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 20, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="article-card" data-category="software-updates">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Software update">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Software Updates</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">What's New in Tracklet: November 2025 Product Updates</h3>
-                        <p class="card-excerpt">Explore the latest features and improvements we've added to make your asset management experience even better, including AI-powered insights.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Product Team
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 15, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 4 -->
-                <article class="article-card" data-category="company-news">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Team meeting">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Company News</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Tracklet Raises $15M Series A to Expand Global Operations</h3>
-                        <p class="card-excerpt">We're excited to announce our Series A funding round led by top-tier investors. Here's what this means for our customers and the future of Tracklet.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Jessica Park
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 12, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 5 -->
-                <article class="article-card" data-category="asset-management">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Asset tracking">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Asset Management</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">RFID vs QR Codes: Which Asset Tracking Method is Right for You?</h3>
-                        <p class="card-excerpt">A comprehensive comparison of the two most popular asset tracking technologies to help you make the best decision for your organization.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Alex Turner
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 10, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 6 -->
-                <article class="article-card" data-category="case-studies">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="Corporate building">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Case Studies</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">How TechCorp Reduced Asset Loss by 85% with Tracklet</h3>
-                        <p class="card-excerpt">Learn how a Fortune 500 company transformed their asset management process and saved millions in equipment loss and theft prevention.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Lisa Wang
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 8, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 7 -->
-                <article class="article-card" data-category="inventory-tips">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop" alt="Warehouse">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Inventory Tips</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Setting Up Automated Reorder Points: A Step-by-Step Guide</h3>
-                        <p class="card-excerpt">Never run out of critical supplies again. Learn how to configure smart reorder points that keep your inventory levels optimized automatically.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    James Wilson
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 5, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 8 -->
-                <article class="article-card" data-category="office-productivity">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=400&fit=crop" alt="Modern office">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Office Productivity</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">The Future of Hybrid Workplaces: Managing Assets Across Locations</h3>
-                        <p class="card-excerpt">As hybrid work becomes the norm, organizations face new challenges in tracking assets across multiple locations. Here's how to adapt.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Rachel Green
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 3, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 9 -->
-                <article class="article-card" data-category="software-updates">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Dashboard analytics">
-                        <div class="card-badges">
-                            <span class="badge badge-category">Software Updates</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Introducing Advanced Analytics: Data-Driven Asset Decisions</h3>
-                        <p class="card-excerpt">Our new analytics dashboard helps you understand asset utilization patterns, predict maintenance needs, and optimize your resource allocation.</p>
-                        <div class="card-meta">
-                            <div style="display: flex; align-items: center; gap: 16px;">
-                                <span class="card-author">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                    Product Team
-                                </span>
-                                <span class="card-date">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                    Nov 1, 2025
-                                </span>
-                            </div>
-                            <div class="card-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                <!-- No additional articles yet - more coming soon -->
             </div>
 
             <!-- No Results Message -->

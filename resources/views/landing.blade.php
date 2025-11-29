@@ -162,7 +162,7 @@
         <div class="cta-banner animate-on-scroll animate-scale">
             <h2 class="cta-banner-title">Ready to simplify your asset management?</h2>
             <p class="cta-banner-text">Join thousands of organizations that have eliminated spreadsheet chaos and saved countless hours with Tracklet.</p>
-            <a href="{{ env('WEB_URL') }}" class="btn btn-white">Get Started Free</a>
+            <a href="{{ env('WEB_URL') }}" target="_blank" class="btn btn-white">Get Started Free</a>
         </div>
     </section>
 
@@ -398,7 +398,7 @@
                     </div>
 
                     <!-- CTA Button -->
-                    <a href="{{ env('WEB_URL') }}" class="btn btn-primary pricing-cta-btn">Get Started</a>
+                    <a href="{{ env('WEB_URL') }}" target="_blank" class="btn btn-primary pricing-cta-btn">Get Started</a>
                 </div>
             </div>
         </div>
@@ -417,7 +417,7 @@
                     <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Dedicated onboarding support</li>
                 </ul>
                 <div class="final-cta-actions">
-                    <a href="{{ env('WEB_URL') }}" class="btn btn-white">Start Your Free Trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="{{ env('WEB_URL') }}" target="_blank" class="btn btn-white">Start Your Free Trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     <a href="{{ route('contact') }}" class="btn btn-outline-white">Schedule a Demo</a>
                 </div>
             </div>
