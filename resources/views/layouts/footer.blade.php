@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Tracklet. All rights reserved.</p>
+                <p>© {{ date('Y') }} Tracklet. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a target="_blank" href="{{ route('privacy') }}">Privacy</a>
                     <a target="_blank" href="{{ route('terms') }}">Terms</a>

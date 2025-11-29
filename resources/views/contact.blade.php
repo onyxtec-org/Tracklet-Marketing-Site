@@ -1,57 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Tracklet - Get in touch with our team">
-    <title>Contact Us - Tracklet</title>
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #9333ea;
-            --primary-light: #a855f7;
-            --primary-dark: #7c22ce;
-            --primary-bg: rgba(147, 51, 234, 0.08);
-            --background: #ffffff;
-            --foreground: #1a1a2e;
-            --muted: #717182;
-            --muted-bg: #f8f9fa;
-            --border: rgba(0, 0, 0, 0.08);
-            --success: #22c55e;
-            --error: #ef4444;
-            --radius: 12px;
-        }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: var(--background); color: var(--foreground); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        
-        /* Navbar */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
-        .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.35rem; }
-        .logo-icon { width: 40px; height: 40px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; }
-        .nav-links { display: flex; gap: 32px; list-style: none; }
-        .nav-links a { color: var(--primary); font-weight: 500; font-size: 0.95rem; }
-        .nav-links a:hover { opacity: 0.8; }
-        .nav-links a.active { color: var(--primary); font-weight: 600; }
-        .nav-actions { display: flex; align-items: center; gap: 16px; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: all 0.2s; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--primary-dark); }
-        .btn-secondary { background: white; color: var(--foreground); border: 1px solid var(--border); }
-        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
-        .btn-white { background: white; color: var(--primary); }
-        .btn-ghost { background: transparent; color: var(--muted); }
-        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+@include('layouts.header')
 
-        /* Hero Section */
+<style>
+        /* Contact Page Specific Styles */
         .contact-hero { padding: 140px 0 80px; background: linear-gradient(180deg, var(--primary-bg) 0%, var(--background) 100%); text-align: center; }
         .contact-hero .section-tag { display: inline-block; padding: 8px 20px; background: white; border: 1px solid var(--border); border-radius: 100px; font-size: 0.9rem; color: var(--primary); font-weight: 600; margin-bottom: 24px; }
         .contact-hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.02em; }
@@ -273,9 +223,6 @@
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
         }
     </style>
-</head>
-<body>
-    @include('layouts.navbar')
 
     <!-- Hero Section -->
     <section class="contact-hero">

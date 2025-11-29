@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy - Tracklet">
-    <title>Privacy Policy - Tracklet</title>
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+@include('layouts.header')
+
+<style>
+        /* Privacy Page Specific Styles */
         :root {
             --primary: #9333ea;
             --primary-light: #a855f7;
@@ -106,9 +97,6 @@
         .footer-bottom-links a { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
         .footer-bottom-links a:hover { color: white; }
     </style>
-</head>
-<body>
-    @include('layouts.navbar')
 
     <!-- Hero Section -->
     <section class="privacy-hero">
@@ -341,9 +329,6 @@
                     <p>By using TrackLet, you consent to the collection, use, and disclosure of your information as described in this Privacy Policy.</p>
                 </div>
 
-                <div class="privacy-footer">
-                    <p>COPYRIGHT © 2025 TrackLet, All rights Reserved</p>
-                </div>
             </div>
         </div>
     </section>

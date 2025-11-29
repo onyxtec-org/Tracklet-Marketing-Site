@@ -290,43 +290,115 @@
         </div>
     </section>
 
-    <!-- Logos -->
-    <section class="logos">
-        <p class="logos-title">Trusted by organizations worldwide</p>
-        <div class="logos-grid">
-            <span>Company Logo</span>
-            <span>Company Logo</span>
-            <span>Company Logo</span>
-            <span>Company Logo</span>
-            <span>Company Logo</span>
-        </div>
-    </section>
-
     <!-- Pricing -->
     <section class="section" id="pricing">
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <span class="section-tag">Pricing Plans</span>
                 <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-description">Choose the plan that fits your organization. All plans include a 14-day free trial with no credit card required.</p>
+                <p class="section-description">Choose the plan that fits your organization. All plans include a 30-day free trial with no credit card required.</p>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card featured animate-on-scroll delay-1">
-                    <h3 class="pricing-name">Tracklet</h3>
-                    <p class="pricing-description">Complete asset management solution</p>
-                    <div class="pricing-price"><span class="pricing-amount">$999</span><span class="pricing-period"> per year</span></div>
-                    <a href="{{ env('WEB_URL') }}" class="btn btn-primary" style="width:100%;">Get Started</a>
-                    <ul class="pricing-features">
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unlimited assets</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unlimited locations</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Advanced reporting</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobile app access</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Asset tracking</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Maintenance scheduling</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Custom workflows</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> API access</li>
-                    </ul>
+            <div class="pricing-wrapper animate-on-scroll delay-1">
+                <!-- Purple Banner -->
+                <div class="pricing-banner">
+                    <span class="pricing-trial-badge">1 Month Free Trial</span>
+                    <h2 class="pricing-banner-title">Annual Subscription Plan</h2>
+                    <p class="pricing-banner-subtitle">Full access to all features</p>
+                </div>
+
+                <!-- Pricing Card -->
+                <div class="pricing-card-new">
+                    <!-- Pricing Display -->
+                    <div class="pricing-display">
+                        <div class="pricing-main">
+                            <span class="pricing-amount-new">$5</span>
+                            <span class="pricing-period-new">/month</span>
+                        </div>
+                        <div class="pricing-annual">
+                            <span class="pricing-annual-amount">$60.00/year</span>
+                            <span class="pricing-annual-text">billed annually</span>
+                        </div>
+                    </div>
+
+                    <!-- Free Trial Badge -->
+                    <div class="pricing-trial-info">
+                        <span class="pricing-free-badge">Free for 30 days</span>
+                        <span class="pricing-then-text">then $60.00/year</span>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div class="pricing-features-section">
+                        <h3 class="pricing-features-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            What's Included
+                        </h3>
+                        <div class="pricing-features-grid">
+                            <div class="pricing-features-column">
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Expense Tracking</span>
+                                </div>
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Asset Management</span>
+                                </div>
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>User Management</span>
+                                </div>
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Role-Based Access</span>
+                                </div>
+                            </div>
+                            <div class="pricing-features-column">
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Inventory Management</span>
+                                </div>
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Repair & Maintenance</span>
+                                </div>
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Advanced Reporting</span>
+                                </div>
+                                <div class="pricing-feature-item">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Priority Support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trial Details Box -->
+                    <div class="pricing-trial-details">
+                        <div class="trial-detail-row">
+                            <div class="trial-detail-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                <span>Trial Period</span>
+                            </div>
+                            <span class="trial-detail-value">30 Days</span>
+                        </div>
+                        <div class="trial-detail-row">
+                            <div class="trial-detail-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                <span>Trial Cost</span>
+                            </div>
+                            <span class="trial-detail-value trial-cost">$0.00</span>
+                        </div>
+                        <div class="trial-detail-row">
+                            <div class="trial-detail-label">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                                <span>Auto-Renewal</span>
+                            </div>
+                            <span class="trial-detail-value trial-renewal">After Trial</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="{{ env('WEB_URL') }}" class="btn btn-primary pricing-cta-btn">Get Started</a>
                 </div>
             </div>
         </div>

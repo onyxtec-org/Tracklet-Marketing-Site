@@ -823,32 +823,6 @@
             color: var(--muted);
         }
 
-        /* Logos */
-        .logos {
-            padding: 60px 0;
-            background: var(--muted-bg);
-            text-align: center;
-        }
-
-        .logos-title {
-            font-size: 0.9rem;
-            color: var(--muted);
-            margin-bottom: 32px;
-        }
-
-        .logos-grid {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .logos-grid span {
-            font-size: 1.25rem;
-            color: #ccc;
-            font-weight: 600;
-        }
-
         /* Pricing */
         .pricing-grid {
             display: grid;
@@ -947,6 +921,252 @@
 
         .pricing-card:not(.featured) .pricing-features li {
             color: var(--muted);
+        }
+
+        /* New Pricing Design */
+        .pricing-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 20px 20px 0 0;
+            padding: 48px 40px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .pricing-trial-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--success);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .pricing-banner-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-banner-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-card-new {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0 0 20px 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-display {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-main {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .pricing-amount-new {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .pricing-period-new {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .pricing-annual {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .pricing-annual-amount {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .pricing-annual-text {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .pricing-trial-info {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .pricing-free-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pricing-then-text {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        .pricing-features-section {
+            margin-bottom: 32px;
+        }
+
+        .pricing-features-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--foreground);
+            margin-bottom: 20px;
+        }
+
+        .pricing-features-title svg {
+            color: var(--success);
+        }
+
+        .pricing-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .pricing-features-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .pricing-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--foreground);
+        }
+
+        .pricing-feature-item svg {
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        .pricing-trial-details {
+            background: var(--primary-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .trial-detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(147, 51, 234, 0.1);
+        }
+
+        .trial-detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .trial-detail-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--foreground);
+        }
+
+        .trial-detail-label svg {
+            color: var(--primary);
+        }
+
+        .trial-detail-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .trial-detail-value.trial-cost {
+            color: var(--success);
+        }
+
+        .trial-detail-value.trial-renewal {
+            color: #3b82f6;
+        }
+
+        .pricing-cta-btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-banner {
+                padding: 40px 24px 32px;
+            }
+
+            .pricing-banner-title {
+                font-size: 2rem;
+            }
+
+            .pricing-card-new {
+                padding: 32px 24px;
+            }
+
+            .pricing-features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-amount-new {
+                font-size: 2.5rem;
+            }
         }
 
         /* Final CTA */
