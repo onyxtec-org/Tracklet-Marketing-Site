@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact Tracklet - Get in touch with our team">
     <title>Contact Us - Tracklet</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -155,21 +158,34 @@
         .still-questions .btn { background: white; color: var(--primary); width: 100%; }
 
         /* Footer */
-        .footer { background: white; border-top: 1px solid var(--border); padding: 60px 0 32px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
-        .footer-brand p { color: var(--muted); font-size: 0.9rem; margin: 16px 0 20px; max-width: 280px; line-height: 1.6; }
+        .footer { background: #1a1a2e; padding: 80px 0 32px; color: white; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand .logo { margin-bottom: 16px; }
+        .footer-brand .logo-icon { background: var(--primary); }
+        .footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; max-width: 280px; line-height: 1.7; margin-bottom: 20px; }
         .footer-social { display: flex; gap: 12px; }
-        .footer-social a { width: 40px; height: 40px; background: var(--muted-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--muted); transition: all 0.2s; }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            transition: all 0.2s;
+        }
         .footer-social a:hover { background: var(--primary); color: white; }
-        .footer-column h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 20px; }
+        .footer-column h4 { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
         .footer-column ul { list-style: none; }
         .footer-column ul li { margin-bottom: 12px; }
-        .footer-column ul a { color: var(--muted); font-size: 0.9rem; }
-        .footer-column ul a:hover { color: var(--primary); }
-        .footer-bottom { padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-        .footer-bottom p { color: var(--muted); font-size: 0.85rem; }
+        .footer-column ul a { color: rgba(255,255,255,0.7); font-size: 0.9rem; transition: color 0.2s; }
+        .footer-column ul a:hover { color: white; }
+        .footer-bottom { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
         .footer-bottom-links { display: flex; gap: 24px; }
-        .footer-bottom-links a { color: var(--muted); font-size: 0.85rem; }
+        .footer-bottom-links a { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+        .footer-bottom-links a:hover { color: white; }
 
         /* Form Success/Error Messages */
         .form-success {

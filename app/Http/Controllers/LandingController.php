@@ -23,6 +23,16 @@ class LandingController extends Controller
         return view('blog');
     }
 
+    public function terms()
+    {
+        return view('terms');
+    }
+
+    public function privacy()
+    {
+        return view('privacy');
+    }
+
     public function submitContact(Request $request)
     {
         $validated = $request->validate([

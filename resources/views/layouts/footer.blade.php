@@ -3,9 +3,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
-                        Tracklet
+                    <a href="{{ route('landing') }}" class="logo">
+                        <img src="{{ asset('LOGO.svg') }}" alt="Tracklet" class="logo-img" width="150" height="55">
                     </a>
                     <p>The all-in-one asset management platform for modern organizations. Track, manage, and optimize your physical resources.</p>
                     <div class="social-links">
@@ -28,14 +27,14 @@
                 </div>
                 <div class="footer-column">
                     <h4>Legal</h4>
-                    <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">GDPR</a></li></ul>
+                    <ul><li><a target="_blank" href="{{ route('privacy') }}">Privacy Policy</a></li><li><a target="_blank" href="{{ route('terms') }}">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">GDPR</a></li></ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2024 Tracklet. All rights reserved.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                    <a target="_blank" href="{{ route('privacy') }}">Privacy</a>
+                    <a target="_blank" href="{{ route('terms') }}">Terms</a>
                     <a href="#">Cookies</a>
                 </div>
             </div>
@@ -245,6 +244,15 @@
             const navActions = document.querySelector('.nav-actions');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
             navActions.style.display = navActions.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+        <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            const navActions = document.querySelector('.nav-actions');
+            if (navLinks) navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navActions) navActions.style.display = navActions.style.display === 'flex' ? 'none' : 'flex';
         });
     </script>
 </body>

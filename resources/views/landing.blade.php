@@ -162,7 +162,7 @@
         <div class="cta-banner animate-on-scroll animate-scale">
             <h2 class="cta-banner-title">Ready to simplify your asset management?</h2>
             <p class="cta-banner-text">Join thousands of organizations that have eliminated spreadsheet chaos and saved countless hours with Tracklet.</p>
-            <a href="#" class="btn btn-white">Get Started Free</a>
+            <a href="{{ env('WEB_URL') }}" class="btn btn-white">Get Started Free</a>
         </div>
     </section>
 
@@ -311,47 +311,16 @@
                 <p class="section-description">Choose the plan that fits your organization. All plans include a 14-day free trial with no credit card required.</p>
             </div>
             <div class="pricing-grid">
-                <div class="pricing-card animate-on-scroll delay-1">
-                    <h3 class="pricing-name">Starter</h3>
-                    <p class="pricing-description">Perfect for small teams and startups</p>
-                    <div class="pricing-price"><span class="pricing-amount">$49</span><span class="pricing-period"> per month</span></div>
-                    <a href="#" class="btn btn-primary" style="width:100%;">Start Free Trial</a>
-                    <ul class="pricing-features">
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Up to 500 assets</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1 location</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Basic reporting</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Email support</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobile app access</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Asset tracking</li>
-                    </ul>
-                </div>
-                <div class="pricing-card featured animate-on-scroll delay-2">
-                    <span class="pricing-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Most Popular</span>
-                    <h3 class="pricing-name">Professional</h3>
-                    <p class="pricing-description">Ideal for growing organizations</p>
-                    <div class="pricing-price"><span class="pricing-amount">$149</span><span class="pricing-period"> per month</span></div>
-                    <a href="#" class="btn btn-primary" style="width:100%;">Start Free Trial</a>
-                    <ul class="pricing-features">
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Up to 5,000 assets</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 10 locations</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Advanced reporting</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobile app access</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Asset tracking</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Maintenance scheduling</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Custom workflows</li>
-                    </ul>
-                </div>
-                <div class="pricing-card animate-on-scroll delay-3">
-                    <h3 class="pricing-name">Enterprise</h3>
-                    <p class="pricing-description">For large organizations with complex needs</p>
-                    <div class="pricing-price"><span class="pricing-amount">Custom</span></div>
-                    <a href="#" class="btn btn-primary" style="width:100%; background: var(--foreground);">Contact Sales</a>
+                <div class="pricing-card featured animate-on-scroll delay-1">
+                    <h3 class="pricing-name">Tracklet</h3>
+                    <p class="pricing-description">Complete asset management solution</p>
+                    <div class="pricing-price"><span class="pricing-amount">$999</span><span class="pricing-period"> per year</span></div>
+                    <a href="{{ env('WEB_URL') }}" class="btn btn-primary" style="width:100%;">Get Started</a>
                     <ul class="pricing-features">
                         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unlimited assets</li>
                         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Unlimited locations</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Custom reporting</li>
-                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 24/7 dedicated support</li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Advanced reporting</li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
                         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobile app access</li>
                         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Asset tracking</li>
                         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Maintenance scheduling</li>
@@ -376,8 +345,8 @@
                     <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Dedicated onboarding support</li>
                 </ul>
                 <div class="final-cta-actions">
-                    <a href="#" class="btn btn-white">Start Your Free Trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    <a href="#" class="btn btn-outline-white">Schedule a Demo</a>
+                    <a href="{{ env('WEB_URL') }}" class="btn btn-white">Start Your Free Trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="{{ route('contact') }}" class="btn btn-outline-white">Schedule a Demo</a>
                 </div>
             </div>
             <div class="final-cta-image">

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tracklet Blog - Insights, tips, and best practices for asset and inventory management">
     <title>Blog - Tracklet</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -420,7 +423,7 @@
         }
 
         /* Footer */
-        .footer { background: #1a1a2e; padding: 80px 0 32px; color: white; }
+      .footer { background: #1a1a2e; padding: 80px 0 32px; color: white; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
         .footer-brand .logo { margin-bottom: 16px; }
         .footer-brand .logo-icon { background: var(--primary); }

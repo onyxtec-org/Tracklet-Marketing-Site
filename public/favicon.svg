@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#ffffff" rx="25"/>
+  <!-- TrackLet T icon from logo, centered and scaled -->
+  <g transform="translate(100, 100)">
+    <g transform="scale(0.6) translate(-30, -20)">
+      <path d="M 1.390625 0 L 13.046875 -43.671875 L 22.203125 -43.671875 L 12.78125 -8.484375 L 31.34375 -8.484375 L 29.0625 0 Z" fill="#a531c6" transform="translate(0, 43.671875)"/>
+      <path d="M 1.390625 0 L 13.109375 -43.671875 L 41.5625 -43.671875 L 39.328125 -35.3125 L 19.90625 -35.3125 L 17.515625 -26.21875 L 34.859375 -26.21875 L 32.625 -17.90625 L 15.28125 -17.90625 L 12.71875 -8.375 L 32.296875 -8.375 L 30.0625 0 Z" fill="#a531c6" transform="translate(0, 43.671875)"/>
+      <path d="M 19.46875 0 L 10.3125 0 L 19.640625 -35.03125 L 6.640625 -35.03125 L 8.921875 -43.671875 L 44.171875 -43.671875 L 41.84375 -35.03125 L 28.78125 -35.03125 Z" fill="#a531c6" transform="translate(0, 43.671875)"/>
+    </g>
+  </g>
+</svg>

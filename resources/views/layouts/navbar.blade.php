@@ -2,14 +2,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="{{ route('landing') }}" class="logo">
-                <div class="logo-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" />
-                        <rect x="9" y="3" width="6" height="4" rx="1" />
-                    </svg>
-                </div>
-                Tracklet
+                <img src="{{ asset('LOGO.svg') }}" alt="Tracklet" class="logo-img" width="150" height="55">
             </a>
             <ul class="nav-links">
                 <li><a href="{{ route('landing') }}#features">Features</a></li>
