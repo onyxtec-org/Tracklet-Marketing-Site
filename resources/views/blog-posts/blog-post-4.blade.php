@@ -376,7 +376,7 @@
     <section class="blog-post-content">
         <div class="container">
             <div class="blog-post-wrapper">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop" alt="Finance and admin collaboration" class="blog-post-image">
+                <img src="{{ asset('4.png') }}" alt="Finance and admin collaboration" class="blog-post-image">
 
                 <div class="blog-post-body">
                     <h2>Introduction</h2>

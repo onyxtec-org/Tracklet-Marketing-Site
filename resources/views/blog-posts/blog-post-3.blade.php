@@ -376,7 +376,7 @@
     <section class="blog-post-content">
         <div class="container">
             <div class="blog-post-wrapper">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop" alt="Modern asset management" class="blog-post-image">
+                <img src="{{ asset('3.png') }}" alt="Modern asset management" class="blog-post-image">
 
                 <div class="blog-post-body">
                     <h2>Introduction</h2>

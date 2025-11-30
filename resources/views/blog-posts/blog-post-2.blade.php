@@ -372,7 +372,7 @@
     <section class="blog-post-content">
         <div class="container">
             <div class="blog-post-wrapper">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=600&fit=crop" alt="Admin chaos in growing companies" class="blog-post-image">
+                <img src="{{ asset('2.png') }}" alt="Admin chaos in growing companies" class="blog-post-image">
 
                 <div class="blog-post-body">
                     <h2>Introduction</h2>

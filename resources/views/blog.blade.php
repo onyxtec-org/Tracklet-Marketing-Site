@@ -529,7 +529,7 @@
                 <a href="{{ route('blog.post', 'why-operations-teams-deserve-single-source-of-truth') }}" class="featured-card-link">
                     <article class="featured-card" data-category="operations" data-featured="true">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop" alt="Operations team collaboration">
+                            <img src="{{ asset('1.png') }}" alt="Operations team collaboration">
                             <div class="card-badges">
                                 <span class="badge badge-featured">Featured</span>
                                 <span class="badge badge-category">Operations</span>
@@ -561,7 +561,7 @@
                 <a href="{{ route('blog.post', 'what-admin-chaos-really-costs-growing-company') }}" class="featured-card-link">
                     <article class="featured-card" data-category="operations" data-featured="true">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=500&fit=crop" alt="Admin chaos in growing companies">
+                            <img src="{{ asset('2.png') }}" alt="Admin chaos in growing companies">
                             <div class="card-badges">
                                 <span class="badge badge-featured">Featured</span>
                                 <span class="badge badge-category">Operations</span>
@@ -593,7 +593,7 @@
                 <a href="{{ route('blog.post', 'modern-asset-management-is-not-about-barcodes') }}" class="featured-card-link">
                     <article class="featured-card" data-category="asset-management" data-featured="true">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop" alt="Modern asset management">
+                            <img src="{{ asset('3.png') }}" alt="Modern asset management">
                             <div class="card-badges">
                                 <span class="badge badge-featured">Featured</span>
                                 <span class="badge badge-category">Asset Management</span>
@@ -625,7 +625,7 @@
                 <a href="{{ route('blog.post', 'when-finance-and-admins-share-same-dashboard') }}" class="featured-card-link">
                     <article class="featured-card" data-category="operations" data-featured="true">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Finance and admin collaboration">
+                            <img src="{{ asset('4.png') }}" alt="Finance and admin collaboration">
                             <div class="card-badges">
                                 <span class="badge badge-featured">Featured</span>
                                 <span class="badge badge-category">Operations</span>
