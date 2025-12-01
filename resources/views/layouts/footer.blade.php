@@ -4,7 +4,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="{{ route('landing') }}" class="logo">
-                        <img src="{{ asset('LOGO.svg') }}" alt="Tracklet" class="logo-img" width="150" height="55">
+                        <img src="{{ asset('footer-logo.png') }}" alt="Tracklet" class="logo-img" width="150" height="55">
                     </a>
                     <p>The all-in-one asset management platform for modern organizations. Track, manage, and optimize your physical resources.</p>
                     <div class="social-links">

@@ -26,10 +26,10 @@
                         <span class="browser-dot red"></span>
                         <span class="browser-dot yellow"></span>
                         <span class="browser-dot green"></span>
-                        <span class="browser-url">tracklet.com/dashboard</span>
+                        <span class="browser-url">{{ env('WEB_URL') }}</span>
                     </div>
                     <div class="browser-content">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=400&fit=crop" alt="Dashboard">
+                        <img src="{{ asset('landing/1.jpg') }}" alt="Dashboard">
                     </div>
                 </div>
                 <div class="floating-card floating-card-1">
@@ -176,7 +176,7 @@
             </div>
             <div class="benefits-grid">
                 <div class="benefits-image animate-on-scroll animate-fade-left">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=500&fit=crop" alt="Office">
+                    <img src="{{ asset('landing/2.jpg') }}" alt="Office">
                 </div>
                 <div class="benefits-list">
                     <div class="benefit-item animate-on-scroll animate-fade-right delay-1">
@@ -422,7 +422,7 @@
                 </div>
             </div>
             <div class="final-cta-image">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=600&fit=crop" alt="Office">
+                <img src="{{ asset('landing/3.jpg') }}" alt="Office">
             </div>
         </div>
     </section>

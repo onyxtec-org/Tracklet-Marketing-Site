@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="{{ route('landing') }}" class="logo">
-                <img src="{{ asset('LOGO.svg') }}" alt="Tracklet" class="logo-img" width="150" height="55">
+                <img src="{{ asset('logo.png') }}" alt="Tracklet" class="logo-img" width="150" height="55">
             </a>
             <ul class="nav-links">
                 <li><a href="{{ route('landing') }}#features">Features</a></li>
